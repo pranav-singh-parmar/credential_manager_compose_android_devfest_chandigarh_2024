@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "com.me.devfest_passkeys"
-        minSdk = 24
+        minSdk = 26
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"
@@ -52,18 +52,37 @@ android {
 dependencies {
 
     implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.activity.compose)
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.ui)
-    implementation(libs.androidx.ui.graphics)
-    implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+
+    // Compose
+    implementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.ui.test.junit4)
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.ui)
+    implementation(libs.androidx.ui.graphics)
     debugImplementation(libs.androidx.ui.tooling)
+    implementation(libs.androidx.ui.tooling.preview)
+    implementation(libs.androidx.ui.test.manifest)
     debugImplementation(libs.androidx.ui.test.manifest)
+    androidTestImplementation(libs.androidx.ui.test.junit4)
+    implementation(libs.androidx.material3)
+
+    // Credentials manager
+    implementation(libs.androidx.credentials)
+    implementation(libs.androidx.credentials.play.services)
+    implementation(libs.credentials.play.services.auth)
+
+    // Gson
+    implementation(libs.gson)
+
+    // Cbor
+    implementation(libs.cbor.google)
+    implementation(libs.cbor.nstant)
+
+    // Bouncy Castle
+    implementation(libs.bcpkix)
 }
